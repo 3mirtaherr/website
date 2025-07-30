@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Links - Dynamic Snowfall Background</title>
+    <style>
+        /* (CSS content omitted here for brevity, already included above) */
+    </style>
+</head>
+<body>
+    <!-- Video Background (Now for All Screens) -->
+    <div class="video-background" id="video-bg">
+        <iframe 
+            id="youtube-video"
+            src="https://www.youtube.com/embed/TosPBQy4zVo?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=TosPBQy4zVo&controls=0&showinfo=0&autohide=1&disablekb=1&modestbranding=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <!-- Optional: Overlay to improve text readability over the video (Now for All Screens) -->
+    <div class="video-overlay"></div>
+
+    <div class="container">
+        <h1>My Online Links</h1>
+        <a href="https://www.instagram.com/3mir_taher?igsh=MThkbTloNmNxOXl5YQ==" target="_blank" class="link-button">Instagram</a>
+        <a href="https://www.linkedin.com/in/amir-taher-71a785285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="link-button">LinkedIn</a>
+        <a href="https://www.facebook.com/share/1ajUAXAPTc/" target="_blank" class="link-button">Facebook</a>
+        <a href="https://wa.me/201201306339" target="_blank" class="link-button">WhatsApp</a>
+        <a href="https://twet.link/3mirtaher" target="_blank" class="link-button">Twet.link</a>
+        <a href="https://x.com/3mir_Taher?t=lOGuD7qfmv971vL90FAX0Q&s=09" target="_blank" class="link-button">Twitter (X)</a>
+        <!-- Add more links here -->
+    </div>
+
+    <script>
+        // YouTube video will now load and manage regardless of screen size
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-video', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            var videoBackground = document.getElementById('video-bg');
+            videoBackground.style.opacity = 1; // Fade in the video background
+        }
+
+        // Load the YouTube IFrame Player API asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+</body>
+</html>
